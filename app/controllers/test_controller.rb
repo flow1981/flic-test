@@ -1,6 +1,10 @@
 class TestsController < ApplicationController
     def create
-        puts "hello"
+        @test = Test.new(params[:client])
+        if @client.save
+            redirect_to @client
+        else
+            puts "hello"
+        end
     end    
 end
-
