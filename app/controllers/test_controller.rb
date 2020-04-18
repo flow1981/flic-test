@@ -1,10 +1,10 @@
 class TestsController < ApplicationController
     def create
-        @test = Test.new(params[:client])
-        if @client.save
-            redirect_to @client
+        @test = Test.new(name: params[:name])
+        if @test.save
+            puts "successfully created and saved #{@test.id}"
         else
-            puts "hello"
+            puts "oh no, couldn't create and save"
         end
     end    
 end
