@@ -1,4 +1,12 @@
 class TestsController < ApplicationController
+
+    def index
+    end
+
+    def show
+       @test = Test.find(params[:id])
+    end
+
     def create
         @test = Test.new(name: params[:name])
         if @test.save
